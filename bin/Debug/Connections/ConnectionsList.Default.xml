@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CrmConnections xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ByPassProxyOnLocal>false</ByPassProxyOnLocal>
+  <Connections>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>884e3901-60a6-4594-b8f3-4f55ee73aa08</ConnectionId>
+      <ConnectionName>Agilisys Default</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>org3bcc9b97</Organization>
+      <OrganizationDataServiceUrl>https://orgb567e42d.api.crm4.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>Agilisys Ltd (default)</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://orgb567e42d.api.crm4.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>orgb567e42d</OrganizationUrlName>
+      <OrganizationVersion>9.2.21051.138</OrganizationVersion>
+      <OriginalUrl>https://orgb567e42d.crm4.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>orgb567e42d.crm4.dynamics.com</ServerName>
+      <ServerPort>80</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>Mayank.Pujara@Agilisys.co.uk</UserName>
+      <WebApplicationUrl>https://orgb567e42d.crm4.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>1961955f-97e8-4e7a-8170-a222ea78c51d</ConnectionId>
+      <ConnectionName>CxmDev1</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>60b859e6d0c0450ab0b9633fa6d7fd4b</Organization>
+      <OrganizationDataServiceUrl>https://cxmdev1.api.crm11.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>CxmDev1</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://cxmdev1.api.crm11.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>cxmdev1</OrganizationUrlName>
+      <OrganizationVersion>9.2.21053.132</OrganizationVersion>
+      <OriginalUrl>https://cxmdev1.crm11.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>cxmdev1.crm11.dynamics.com</ServerName>
+      <ServerPort>80</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>mayank.pujara@cxmdemos.onmicrosoft.com</UserName>
+      <WebApplicationUrl>https://cxmdev1.crm11.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>41f2adc7-5681-4195-abe0-27495950b2ff</ConnectionId>
+      <ConnectionName>DocUpload</ConnectionName>
+      <IsCustomAuth>true</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>unq2f981d95ec6d48f5aa12817e63766</Organization>
+      <OrganizationDataServiceUrl>https://orgfa39f7cb.api.crm11.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>DocUpload</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://orgfa39f7cb.api.crm11.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>orgb567e42d</OrganizationUrlName>
+      <OrganizationVersion>9.2.21052.127</OrganizationVersion>
+      <OriginalUrl>https://cxmdev1.crm11.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>true</SavePassword>
+      <ServerName>orgfa39f7cb.crm11.dynamics.com</ServerName>
+      <ServerPort>443</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserDomain />
+      <UserName>mayank.pujara@cxmdemos.onmicrosoft.com</UserName>
+      <UserPassword>cKP4YnAhRV2H9KRCD7V+IA==</UserPassword>
+      <WebApplicationUrl>https://cxmdev1.crm11.dynamics.com/</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>ea3d5615-06a4-4cba-90f0-c7f9ba52dfde</ConnectionId>
+      <ConnectionName>Document Upload</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>unq2f981d95ec6d48f5aa12817e63766</Organization>
+      <OrganizationDataServiceUrl>https://orgfa39f7cb.api.crm11.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>DocUpload</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://orgfa39f7cb.api.crm11.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>orgfa39f7cb</OrganizationUrlName>
+      <OrganizationVersion>9.2.21052.127</OrganizationVersion>
+      <OriginalUrl>https://orgfa39f7cb.crm11.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>orgfa39f7cb.crm11.dynamics.com</ServerName>
+      <ServerPort>80</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>mayank.pujara@cxmdemos.onmicrosoft.com</UserName>
+      <WebApplicationUrl>https://orgfa39f7cb.crm11.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>9efc30a2-94b7-4dc9-8cc1-e13f7fcdb6f8</ConnectionId>
+      <ConnectionName>Mayank-SDM</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>7e6939da15574d638f9b7877c6786dc4</Organization>
+      <OrganizationDataServiceUrl>https://sdmsols.api.crm11.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>sdmsols (default)</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://sdmsols.api.crm11.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>sdmsols</OrganizationUrlName>
+      <OrganizationVersion>9.2.21044.125</OrganizationVersion>
+      <OriginalUrl>https://sdmsols.crm11.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>sdmsols.crm11.dynamics.com</ServerName>
+      <ServerPort>80</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>mayank@sdmsols.onmicrosoft.com</UserName>
+      <WebApplicationUrl>https://sdmsols.crm11.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>00000000-0000-0000-0000-000000000000</AzureAdAppId>
+      <ConnectionId>e23c2ab7-5e06-44ac-8a9c-89b9cb1c18e5</ConnectionId>
+      <ConnectionName>cxmportalpoc</ConnectionName>
+      <IsCustomAuth>true</IsCustomAuth>
+      <IsFromSdkLoginCtrl>false</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>459de5262eb947c2814c68b5fcff8eca</Organization>
+      <OrganizationDataServiceUrl>https://cxmportalpoc.api.crm11.dynamics.com//XRMServices/2011/OrganizationData.svc</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>CXM Portal PoC</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://cxmportalpoc.api.crm11.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>cxmportalpoc</OrganizationUrlName>
+      <OrganizationVersion>9.2.21052.127</OrganizationVersion>
+      <OriginalUrl>https://cxmportalpoc.crm11.dynamics.com</OriginalUrl>
+      <SavePassword>true</SavePassword>
+      <ServerName>cxmportalpoc.crm11.dynamics.com</ServerName>
+      <ServerPort>443</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserDomain />
+      <UserName>Mayank.Pujara@agilisys.co.uk</UserName>
+      <UserPassword>X3U8dVp5WZoToA0wyroAnPcG8GF6ZNbyymo20ieQnGo=</UserPassword>
+      <WebApplicationUrl>https://cxmportalpoc.crm11.dynamics.com/</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>e63be815-fd0d-4319-8e35-902e7d70adf6</ConnectionId>
+      <ConnectionName>TrackAndTrace DEV</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>9bf38827330a47658be6d5fbd6b86d49</Organization>
+      <OrganizationDataServiceUrl>https://trackandtracedev.api.crm4.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>Track and Trace Development</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://trackandtracedev.api.crm4.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>trackandtracedev</OrganizationUrlName>
+      <OrganizationVersion>9.2.21052.129</OrganizationVersion>
+      <OriginalUrl>https://trackandtracedev.crm4.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>trackandtracedev.crm4.dynamics.com</ServerName>
+      <ServerPort>80</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>mayank.pujara@statesofguernsey.onmicrosoft.com</UserName>
+      <WebApplicationUrl>https://trackandtracedev.crm4.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>263eddb8-d097-4d14-8991-44d0ff223e09</ConnectionId>
+      <ConnectionName>Track and Trace SIT</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>f945507cbd224048ae90679adbbcf6cb</Organization>
+      <OrganizationDataServiceUrl>https://trackandtracesit2.api.crm4.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>Track and Trace SIT</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://trackandtracesit2.api.crm4.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>trackandtracesit2</OrganizationUrlName>
+      <OrganizationVersion>9.2.21054.135</OrganizationVersion>
+      <OriginalUrl>https://trackandtracesit2.crm4.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>trackandtracesit2.crm4.dynamics.com</ServerName>
+      <ServerPort>80</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>mayank.pujara@statesofguernsey.onmicrosoft.com</UserName>
+      <WebApplicationUrl>https://trackandtracesit2.crm4.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>5ea083ef-4e18-4359-8845-522ae8fcc410</ConnectionId>
+      <ConnectionName>Track and Trace UAT</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>04a82f34565847d1b0f3c3ce226714f2</Organization>
+      <OrganizationDataServiceUrl>https://trackandtraceuat.api.crm4.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>Track and Trace UAT</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://trackandtraceuat.api.crm4.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>trackandtraceuat</OrganizationUrlName>
+      <OrganizationVersion>9.2.21054.135</OrganizationVersion>
+      <OriginalUrl>https://trackandtraceuat.crm4.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>trackandtraceuat.crm4.dynamics.com</ServerName>
+      <ServerPort>80</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>mayank.pujara@statesofguernsey.onmicrosoft.com</UserName>
+      <WebApplicationUrl>https://trackandtraceuat.crm4.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>9469ef2c-6171-4168-a1bb-4c7d50cd4e31</ConnectionId>
+      <ConnectionName>Track and Trace PROD (LIVE ENVIRONMENT)</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>3153abf5bf8a467f9493e5550353633d</Organization>
+      <OrganizationDataServiceUrl>https://trackandtrace.api.crm4.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>Track and Trace</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://trackandtrace.api.crm4.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>trackandtrace</OrganizationUrlName>
+      <OrganizationVersion>9.2.21055.135</OrganizationVersion>
+      <OriginalUrl>https://trackandtrace.crm4.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>trackandtrace.crm4.dynamics.com</ServerName>
+      <ServerPort>80</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>mayank.pujara@statesofguernsey.onmicrosoft.com</UserName>
+      <WebApplicationUrl>https://trackandtrace.crm4.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>5d67765f-ef4a-4573-9065-25fdabd36b0f</ConnectionId>
+      <ConnectionName>NLC Dev</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>unq711492b701e74359adcb4c36aa243</Organization>
+      <OrganizationDataServiceUrl>https://nlcdev.api.crm11.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>NLC Dev</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://nlcdev.api.crm11.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>nlcdevelopment</OrganizationUrlName>
+      <OrganizationVersion>9.2.21063.125</OrganizationVersion>
+      <OriginalUrl>https://nlcdevelopment.crm11.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>nlcdev.crm11.dynamics.com</ServerName>
+      <ServerPort>80</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>mayank.pujara@nlcgov.onmicrosoft.com</UserName>
+      <WebApplicationUrl>https://nlcdevelopment.crm11.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>cfb8c18e-d706-4680-ae8e-62784ac9c8f2</ConnectionId>
+      <ConnectionName>cxmdemos</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>23d9e04699c64d1c9ffe7665d33563</Organization>
+      <OrganizationDataServiceUrl>https://orga8dce3aa.api.crm11.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>cxmdemos (default)</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://orga8dce3aa.api.crm11.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>orga8dce3aa</OrganizationUrlName>
+      <OrganizationVersion>9.2.21082.132</OrganizationVersion>
+      <OriginalUrl>https://orga8dce3aa.crm11.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>orga8dce3aa.crm11.dynamics.com</ServerName>
+      <ServerPort>80</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>mayank.pujara@cxmdemos.onmicrosoft.com</UserName>
+      <WebApplicationUrl>https://orga8dce3aa.crm11.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>b9e49c00-6778-4d96-82b0-c556b761a8ae</ConnectionId>
+      <ConnectionName>NLCSIT</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>orgb5b9554c</Organization>
+      <OrganizationDataServiceUrl>https://nlcsit.api.crm11.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>NLC SIT</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://nlcsit.api.crm11.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationVersion>9.2.21082.132</OrganizationVersion>
+      <OriginalUrl>https://nlcsit.crm11.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>nlcsit.crm11.dynamics.com</ServerName>
+      <ServerPort />
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>0</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>mayank.pujara@nlcgov.onmicrosoft.com</UserName>
+      <WebApplicationUrl>https://nlcsit.crm11.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+  </Connections>
+  <IsReadOnly>false</IsReadOnly>
+  <Name>Default</Name>
+  <UseCustomProxy>false</UseCustomProxy>
+  <UseDefaultCredentials>false</UseDefaultCredentials>
+  <UseInternetExplorerProxy>false</UseInternetExplorerProxy>
+  <UseMruDisplay>false</UseMruDisplay>
+</CrmConnections>
