@@ -32,7 +32,6 @@ namespace AutoNumberUpdater
             this.toolStripMenu = new System.Windows.Forms.ToolStrip();
             this.tsbClose = new System.Windows.Forms.ToolStripButton();
             this.tssSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbFixAutoNumber = new System.Windows.Forms.ToolStripButton();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.StatusText = new System.Windows.Forms.TextBox();
             this.cmbSolution = new System.Windows.Forms.ComboBox();
@@ -43,7 +42,6 @@ namespace AutoNumberUpdater
             this.label2 = new System.Windows.Forms.Label();
             this.txtSample = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAutoNumberPreview = new System.Windows.Forms.Button();
             this.btnFixAutoNumbers = new System.Windows.Forms.Button();
             this.toolStripMenu.SuspendLayout();
             this.SuspendLayout();
@@ -53,12 +51,11 @@ namespace AutoNumberUpdater
             this.toolStripMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbClose,
-            this.tssSeparator1,
-            this.tsbFixAutoNumber});
+            this.tssSeparator1});
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
             this.toolStripMenu.Name = "toolStripMenu";
             this.toolStripMenu.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.toolStripMenu.Size = new System.Drawing.Size(2051, 62);
+            this.toolStripMenu.Size = new System.Drawing.Size(2051, 52);
             this.toolStripMenu.TabIndex = 4;
             this.toolStripMenu.Text = "toolStrip1";
             // 
@@ -66,22 +63,14 @@ namespace AutoNumberUpdater
             // 
             this.tsbClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsbClose.Name = "tsbClose";
-            this.tsbClose.Size = new System.Drawing.Size(211, 55);
+            this.tsbClose.Size = new System.Drawing.Size(211, 45);
             this.tsbClose.Text = "Close this tool";
             this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
             // 
             // tssSeparator1
             // 
             this.tssSeparator1.Name = "tssSeparator1";
-            this.tssSeparator1.Size = new System.Drawing.Size(6, 62);
-            // 
-            // tsbFixAutoNumber
-            // 
-            this.tsbFixAutoNumber.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbFixAutoNumber.Name = "tsbFixAutoNumber";
-            this.tsbFixAutoNumber.Size = new System.Drawing.Size(368, 55);
-            this.tsbFixAutoNumber.Text = "Fix AutoNumber (Contact)";
-            this.tsbFixAutoNumber.Click += new System.EventHandler(this.tsbFixAutoNumber_Click);
+            this.tssSeparator1.Size = new System.Drawing.Size(6, 52);
             // 
             // progressBar
             // 
@@ -195,25 +184,15 @@ namespace AutoNumberUpdater
             this.label3.TabIndex = 35;
             this.label3.Text = "Next number";
             // 
-            // btnAutoNumberPreview
-            // 
-            this.btnAutoNumberPreview.Location = new System.Drawing.Point(1199, 77);
-            this.btnAutoNumberPreview.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.btnAutoNumberPreview.Name = "btnAutoNumberPreview";
-            this.btnAutoNumberPreview.Size = new System.Drawing.Size(321, 153);
-            this.btnAutoNumberPreview.TabIndex = 36;
-            this.btnAutoNumberPreview.Text = "Fix AutoNumbers (PREVIEW)";
-            this.btnAutoNumberPreview.UseVisualStyleBackColor = true;
-            this.btnAutoNumberPreview.Click += new System.EventHandler(this.btnAutoNumberPreview_Click);
-            // 
             // btnFixAutoNumbers
             // 
-            this.btnFixAutoNumbers.Location = new System.Drawing.Point(1595, 77);
+            this.btnFixAutoNumbers.Enabled = false;
+            this.btnFixAutoNumbers.Location = new System.Drawing.Point(1168, 89);
             this.btnFixAutoNumbers.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnFixAutoNumbers.Name = "btnFixAutoNumbers";
-            this.btnFixAutoNumbers.Size = new System.Drawing.Size(321, 153);
+            this.btnFixAutoNumbers.Size = new System.Drawing.Size(491, 220);
             this.btnFixAutoNumbers.TabIndex = 37;
-            this.btnFixAutoNumbers.Text = "Fix AutoNumbers (FINAL)";
+            this.btnFixAutoNumbers.Text = "Fix Auto Numbers (Updates Records which are missing auto number value)";
             this.btnFixAutoNumbers.UseVisualStyleBackColor = true;
             this.btnFixAutoNumbers.Click += new System.EventHandler(this.btnFixAutoNumbers_Click);
             // 
@@ -222,7 +201,6 @@ namespace AutoNumberUpdater
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnFixAutoNumbers);
-            this.Controls.Add(this.btnAutoNumberPreview);
             this.Controls.Add(this.txtSample);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbAttributes);
@@ -238,6 +216,7 @@ namespace AutoNumberUpdater
             this.Name = "AutoNumberUpdater";
             this.Size = new System.Drawing.Size(2051, 1319);
             this.ConnectionUpdated += new XrmToolBox.Extensibility.PluginControlBase.ConnectionUpdatedHandler(this.AutoNumberUpdater_ConnectionUpdated);
+            this.OnCloseTool += AutoNumberUpdater_OnCloseTool;
             this.Load += new System.EventHandler(this.AutoNumberUpdater_Load);
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
@@ -246,10 +225,10 @@ namespace AutoNumberUpdater
 
         }
 
+        
         #endregion
         private System.Windows.Forms.ToolStrip toolStripMenu;
         private System.Windows.Forms.ToolStripButton tsbClose;
-        private System.Windows.Forms.ToolStripButton tsbFixAutoNumber;
         private System.Windows.Forms.ToolStripSeparator tssSeparator1;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.TextBox StatusText;
@@ -261,7 +240,6 @@ namespace AutoNumberUpdater
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSample;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnAutoNumberPreview;
         private System.Windows.Forms.Button btnFixAutoNumbers;
     }
 }
