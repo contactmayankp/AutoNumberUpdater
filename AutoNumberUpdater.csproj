@@ -8,8 +8,8 @@
     <ProjectGuid>{62D850ED-1616-4058-8C6B-F1253BDBAEAF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AutoNumberUpdater</RootNamespace>
-    <AssemblyName>AutoNumberUpdater</AssemblyName>
+    <RootNamespace>Sdmsols.XTB.AutoNumberUpdater</RootNamespace>
+    <AssemblyName>Sdmsols.XTB.AutoNumberUpdater</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -225,6 +225,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Icons\SDMIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF $(ConfigurationName) == Debug (

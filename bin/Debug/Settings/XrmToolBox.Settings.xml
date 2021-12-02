@@ -16,9 +16,9 @@
   <DoNotShowStartPage>false</DoNotShowStartPage>
   <HiddenPlugins />
   <LastAdvertisementDisplay>2021-12-01T13:29:11.2708808+00:00</LastAdvertisementDisplay>
-  <LastConnection>NLCUAT</LastConnection>
+  <LastConnection>Mayank-MPEnv</LastConnection>
   <LastPlugin />
-  <LastUpdateCheck>2021-12-02T14:33:58.2845785+00:00</LastUpdateCheck>
+  <LastUpdateCheck>2021-12-02T14:37:09.0427454+00:00</LastUpdateCheck>
   <MergeConnectionFiles>false</MergeConnectionFiles>
   <MostUsedList>
     <PluginUseCount>
@@ -26,7 +26,7 @@
       <Name>AutoNumberUpdater.MyPlugin</Name>
     </PluginUseCount>
     <PluginUseCount>
-      <Count>4</Count>
+      <Count>6</Count>
       <Name>Sdmsols.XTB.AutoNumberUpdater.MyPlugin</Name>
     </PluginUseCount>
   </MostUsedList>
