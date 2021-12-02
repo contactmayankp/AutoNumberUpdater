@@ -119,6 +119,34 @@
     <ConnectionDetail>
       <AuthType>OnlineFederation</AuthType>
       <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
+      <ConnectionId>fe5805a7-6695-4162-b92c-0b5c79e13277</ConnectionId>
+      <ConnectionName>Mayank-MPEnv</ConnectionName>
+      <IsCustomAuth>false</IsCustomAuth>
+      <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
+      <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
+      <NewAuthType>AD</NewAuthType>
+      <Organization>unq17b1191ce84240399f1c03a2b8bb7</Organization>
+      <OrganizationDataServiceUrl>https://orgc8c13274.api.crm11.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>Mayankkumar Vasantlal Pujara's Environment</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://orgc8c13274.api.crm11.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <OrganizationUrlName>orgc8c13274</OrganizationUrlName>
+      <OrganizationVersion>9.2.21111.141</OrganizationVersion>
+      <OriginalUrl>https://orgc8c13274.crm11.dynamics.com</OriginalUrl>
+      <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
+      <SavePassword>false</SavePassword>
+      <ServerName>orgc8c13274.crm11.dynamics.com</ServerName>
+      <ServerPort>80</ServerPort>
+      <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
+      <Timeout />
+      <TimeoutTicks>1200000000</TimeoutTicks>
+      <UseIfd>false</UseIfd>
+      <UseMfa>false</UseMfa>
+      <UserName>mayank@sdmsols.onmicrosoft.com</UserName>
+      <WebApplicationUrl>https://orgc8c13274.crm11.dynamics.com</WebApplicationUrl>
+    </ConnectionDetail>
+    <ConnectionDetail>
+      <AuthType>OnlineFederation</AuthType>
+      <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
       <ConnectionId>9efc30a2-94b7-4dc9-8cc1-e13f7fcdb6f8</ConnectionId>
       <ConnectionName>Mayank-SDM</ConnectionName>
       <IsCustomAuth>false</IsCustomAuth>
@@ -372,29 +400,29 @@
     <ConnectionDetail>
       <AuthType>OnlineFederation</AuthType>
       <AzureAdAppId>51f81489-12ee-4a9e-aaae-a2591f45987d</AzureAdAppId>
-      <ConnectionId>fe5805a7-6695-4162-b92c-0b5c79e13277</ConnectionId>
-      <ConnectionName>Mayank-MPEnv</ConnectionName>
+      <ConnectionId>c1df0b08-e67d-4c46-aa5c-cfc3eccb0734</ConnectionId>
+      <ConnectionName>NLCUAT</ConnectionName>
       <IsCustomAuth>false</IsCustomAuth>
       <IsFromSdkLoginCtrl>true</IsFromSdkLoginCtrl>
       <LastUsedOn>0001-01-01 00:00:00</LastUsedOn>
       <NewAuthType>AD</NewAuthType>
-      <Organization>unq17b1191ce84240399f1c03a2b8bb7</Organization>
-      <OrganizationDataServiceUrl>https://orgc8c13274.api.crm11.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
-      <OrganizationFriendlyName>Mayankkumar Vasantlal Pujara's Environment</OrganizationFriendlyName>
-      <OrganizationServiceUrl>https://orgc8c13274.api.crm11.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
+      <Organization>org9a9041c8</Organization>
+      <OrganizationDataServiceUrl>https://nlcuat.api.crm11.dynamics.com/api/data/v9.2/</OrganizationDataServiceUrl>
+      <OrganizationFriendlyName>NLC UAT</OrganizationFriendlyName>
+      <OrganizationServiceUrl>https://nlcuat.api.crm11.dynamics.com/XRMServices/2011/Organization.svc</OrganizationServiceUrl>
       <OrganizationVersion>9.2.21111.141</OrganizationVersion>
-      <OriginalUrl>https://orgc8c13274.crm11.dynamics.com</OriginalUrl>
+      <OriginalUrl>https://nlcuat.crm11.dynamics.com</OriginalUrl>
       <ReplyUrl>app://58145b91-0c36-4500-8554-080854f2ac97/</ReplyUrl>
       <SavePassword>false</SavePassword>
-      <ServerName>orgc8c13274.crm11.dynamics.com</ServerName>
+      <ServerName>nlcuat.crm11.dynamics.com</ServerName>
       <ServerPort />
       <TenantId>00000000-0000-0000-0000-000000000000</TenantId>
       <Timeout />
       <TimeoutTicks>0</TimeoutTicks>
       <UseIfd>false</UseIfd>
       <UseMfa>false</UseMfa>
-      <UserName>mayank@sdmsols.onmicrosoft.com</UserName>
-      <WebApplicationUrl>https://orgc8c13274.crm11.dynamics.com</WebApplicationUrl>
+      <UserName>mayank.pujara@nlcgov.onmicrosoft.com</UserName>
+      <WebApplicationUrl>https://nlcuat.crm11.dynamics.com</WebApplicationUrl>
     </ConnectionDetail>
   </Connections>
   <IsReadOnly>false</IsReadOnly>

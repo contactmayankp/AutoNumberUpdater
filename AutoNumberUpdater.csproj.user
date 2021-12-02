@@ -3,7 +3,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
     <StartProgram>C:\PCDATA\WORK\AutoNumberUpdater\bin\Debug\XrmToolBox.exe</StartProgram>
-    <StartArguments>/overridepath:. /plugin:"AutoNumberUpdater" /connection:"NLC Dev"</StartArguments>
+    <StartArguments>/overridepath:. /plugin:"AutoNumberUpdater" /connection:"Mayank-MPEnv"</StartArguments>
   </PropertyGroup>
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
