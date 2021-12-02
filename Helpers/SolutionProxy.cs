@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xrm.Sdk;
 
-namespace AutoNumberUpdater
+namespace Sdmsols.XTB.AutoNumberUpdater
 {
     internal class SolutionProxy
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xrm.Sdk.Metadata;
 
-namespace AutoNumberUpdater
+namespace Sdmsols.XTB.AutoNumberUpdater
 {
     public class AttributeProxy
     {

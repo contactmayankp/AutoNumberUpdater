@@ -1,4 +1,3 @@
-C:\PCDATA\WORK\AutoNumberUpdater\obj\Debug\AutoNumberUpdater.AutoNumberUpdater.resources
 C:\PCDATA\WORK\AutoNumberUpdater\obj\Debug\AutoNumberUpdater.csproj.GenerateResource.cache
 C:\PCDATA\WORK\AutoNumberUpdater\obj\Debug\AutoNumberUpdater.csproj.CoreCompileInputs.cache
 C:\PCDATA\WORK\AutoNumberUpdater\bin\Debug\AutoNumberUpdater.dll.config
@@ -69,3 +68,4 @@ C:\PCDATA\WORK\AutoNumberUpdater\bin\Debug\NuGet.Protocol.xml
 C:\PCDATA\WORK\AutoNumberUpdater\bin\Debug\NuGet.Versioning.xml
 C:\PCDATA\WORK\AutoNumberUpdater\bin\Debug\System.Security.Cryptography.Cng.xml
 C:\PCDATA\WORK\AutoNumberUpdater\obj\Debug\AutoNumberUpdater.csprojAssemblyReference.cache
+C:\PCDATA\WORK\AutoNumberUpdater\obj\Debug\Sdmsols.XTB.AutoNumberUpdater.AutoNumberUpdater.resources

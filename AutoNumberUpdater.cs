@@ -15,10 +15,12 @@ using Logging;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
 using XrmToolBox.Extensibility;
+using XrmToolBox.Extensibility.Args;
+using XrmToolBox.Extensibility.Interfaces;
 
-namespace AutoNumberUpdater
+namespace Sdmsols.XTB.AutoNumberUpdater
 {
-    public partial class AutoNumberUpdater : PluginControlBase
+    public partial class AutoNumberUpdater : PluginControlBase,IGitHubPlugin, IPayPalPlugin, IMessageBusHost, IHelpPlugin, IStatusBarMessenger
     {
         #region Constructor and Class Variables
 
@@ -28,7 +30,11 @@ namespace AutoNumberUpdater
         private EntityMetadataProxy _selectedEntity;
 
         private AttributeProxy _selectedAttributeMetadata;
-        
+
+        public event EventHandler<MessageBusEventArgs> OnOutgoingMessage;
+        public event EventHandler<StatusBarMessageEventArgs> SendMessageToStatusBar;
+
+
         private enum ControlSelected
         {
             Solutions=1,
@@ -714,7 +720,27 @@ namespace AutoNumberUpdater
             return format;
         }
 
+        public void OnIncomingMessage(MessageBusEventArgs message)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion Auto Number Format Methods
 
+        #region Interface Members
+
+        public string RepositoryName => "AutoNumberUpdater";
+
+        public string UserName => "contactmayankp";
+        
+        public string DonationDescription => "Auto Number Updater";
+        public string EmailAccount => "mayank.pujara@gmail.com";
+
+        public string HelpUrl => "https://mayankp.wordpress.com/";
+
+
+        #endregion
+
+       
     }
 }

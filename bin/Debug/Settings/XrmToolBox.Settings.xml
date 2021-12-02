@@ -18,12 +18,16 @@
   <LastAdvertisementDisplay>2021-12-01T13:29:11.2708808+00:00</LastAdvertisementDisplay>
   <LastConnection>NLCUAT</LastConnection>
   <LastPlugin />
-  <LastUpdateCheck>2021-12-02T10:43:25.5896975+00:00</LastUpdateCheck>
+  <LastUpdateCheck>2021-12-02T14:33:58.2845785+00:00</LastUpdateCheck>
   <MergeConnectionFiles>false</MergeConnectionFiles>
   <MostUsedList>
     <PluginUseCount>
-      <Count>49</Count>
+      <Count>51</Count>
       <Name>AutoNumberUpdater.MyPlugin</Name>
+    </PluginUseCount>
+    <PluginUseCount>
+      <Count>4</Count>
+      <Name>Sdmsols.XTB.AutoNumberUpdater.MyPlugin</Name>
     </PluginUseCount>
   </MostUsedList>
   <MruItemsToDisplay>10</MruItemsToDisplay>

@@ -1,5 +1,5 @@
 ﻿
-namespace AutoNumberUpdater
+namespace Sdmsols.XTB.AutoNumberUpdater
 {
     partial class AutoNumberUpdater
     {

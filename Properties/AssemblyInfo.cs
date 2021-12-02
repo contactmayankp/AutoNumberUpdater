@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AutoNumberUpdater")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("XrmToolBox plugin to update Auto Number values in Microsoft Dynamics 365")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("SDMSolutionsLimited")]
 [assembly: AssemblyProduct("AutoNumberUpdater")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright © SDMSolutionsLimited 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
