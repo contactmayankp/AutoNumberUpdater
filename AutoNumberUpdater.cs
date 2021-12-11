@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logging;
+using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
 using XrmToolBox.Extensibility;
@@ -599,8 +600,21 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             var result = 0;
             if (lastrecord == null)
             {
-                //throw new Exception("No numbered data found for attribute " + attributename);
-                return 0;
+                var seedResult = (GetAutoNumberSeedResponse)Service.Execute(new GetAutoNumberSeedRequest()
+                {
+                    EntityName = entity.Metadata.LogicalName,
+                    AttributeName = attributename
+                });
+
+                if (seedResult != null)
+                {
+                    return (int) seedResult.AutoNumberSeedValue - 1;
+                }
+                else
+                {
+                    //throw new Exception("No numbered data found for attribute " + attributename);
+                    return 0;
+                }
             }
             var lastvalue = lastrecord[attributename].ToString();
             if (lastvalue.Length >= seqstart + length)
@@ -612,6 +626,9 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                     result = lastseq;
                 }
             }
+
+            
+
             if (result == 0)
             {
                 //LogUse("GuessSeed failed");
