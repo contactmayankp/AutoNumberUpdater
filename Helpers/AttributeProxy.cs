@@ -31,6 +31,15 @@ namespace Sdmsols.XTB.AutoNumberUpdater
 
         public override string ToString()
         {
+            if (attributeMetadata != null)
+            {
+                if (!string.IsNullOrEmpty(attributeMetadata?.DisplayName?.UserLocalizedLabel?.Label))
+                {
+                    return $"{attributeMetadata.DisplayName.UserLocalizedLabel.Label} ({attributeMetadata.LogicalName})";
+                }
+                return attributeMetadata.LogicalName;
+            }
+
             return attributeMetadata.LogicalName;
         }
 

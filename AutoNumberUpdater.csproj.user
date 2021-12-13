@@ -8,4 +8,9 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\PCDATA\WORK\AutoNumberUpdater\bin\Debug\XrmToolBox.exe</StartProgram>
+    <StartArguments>/overridepath:. /plugin:"AutoNumberUpdater" /connection:"Mayank-MPEnv"</StartArguments>
+  </PropertyGroup>
 </Project>
