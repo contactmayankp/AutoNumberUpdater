@@ -43,6 +43,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             this.txtSample = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnFixAutoNumbers = new System.Windows.Forms.Button();
+            this.tslAbout = new System.Windows.Forms.ToolStripLabel();
             this.toolStripMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             // 
             this.toolStripMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tslAbout,
             this.tsbClose,
             this.tssSeparator1});
             this.toolStripMenu.Location = new System.Drawing.Point(0, 0);
@@ -63,14 +65,14 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             // 
             this.tsbClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsbClose.Name = "tsbClose";
-            this.tsbClose.Size = new System.Drawing.Size(211, 45);
+            this.tsbClose.Size = new System.Drawing.Size(211, 55);
             this.tsbClose.Text = "Close this tool";
             this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
             // 
             // tssSeparator1
             // 
             this.tssSeparator1.Name = "tssSeparator1";
-            this.tssSeparator1.Size = new System.Drawing.Size(6, 52);
+            this.tssSeparator1.Size = new System.Drawing.Size(6, 62);
             // 
             // progressBar
             // 
@@ -105,7 +107,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             this.cmbSolution.Location = new System.Drawing.Point(219, 89);
             this.cmbSolution.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cmbSolution.Name = "cmbSolution";
-            this.cmbSolution.Size = new System.Drawing.Size(887, 39);
+            this.cmbSolution.Size = new System.Drawing.Size(1047, 39);
             this.cmbSolution.TabIndex = 28;
             this.cmbSolution.SelectedIndexChanged += new System.EventHandler(this.cmbSolution_SelectedIndexChanged);
             // 
@@ -127,7 +129,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             this.cmbEntities.Location = new System.Drawing.Point(219, 150);
             this.cmbEntities.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cmbEntities.Name = "cmbEntities";
-            this.cmbEntities.Size = new System.Drawing.Size(887, 39);
+            this.cmbEntities.Size = new System.Drawing.Size(1047, 39);
             this.cmbEntities.TabIndex = 31;
             this.cmbEntities.SelectedIndexChanged += new System.EventHandler(this.cmbEntities_SelectedIndexChanged);
             // 
@@ -149,7 +151,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             this.cmbAttributes.Location = new System.Drawing.Point(219, 220);
             this.cmbAttributes.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cmbAttributes.Name = "cmbAttributes";
-            this.cmbAttributes.Size = new System.Drawing.Size(887, 39);
+            this.cmbAttributes.Size = new System.Drawing.Size(1047, 39);
             this.cmbAttributes.TabIndex = 33;
             this.cmbAttributes.SelectedIndexChanged += new System.EventHandler(this.cmbAttributes_SelectedIndexChanged);
             // 
@@ -171,7 +173,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             this.txtSample.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txtSample.Name = "txtSample";
             this.txtSample.ReadOnly = true;
-            this.txtSample.Size = new System.Drawing.Size(887, 38);
+            this.txtSample.Size = new System.Drawing.Size(1047, 38);
             this.txtSample.TabIndex = 34;
             // 
             // label3
@@ -187,7 +189,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             // btnFixAutoNumbers
             // 
             this.btnFixAutoNumbers.Enabled = false;
-            this.btnFixAutoNumbers.Location = new System.Drawing.Point(1168, 89);
+            this.btnFixAutoNumbers.Location = new System.Drawing.Point(1424, 89);
             this.btnFixAutoNumbers.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnFixAutoNumbers.Name = "btnFixAutoNumbers";
             this.btnFixAutoNumbers.Size = new System.Drawing.Size(491, 220);
@@ -195,6 +197,15 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             this.btnFixAutoNumbers.Text = "Fix Auto Numbers (Updates Records which are missing auto number value)";
             this.btnFixAutoNumbers.UseVisualStyleBackColor = true;
             this.btnFixAutoNumbers.Click += new System.EventHandler(this.btnFixAutoNumbers_Click);
+            // 
+            // tslAbout
+            // 
+            this.tslAbout.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tslAbout.IsLink = true;
+            this.tslAbout.Name = "tslAbout";
+            this.tslAbout.Size = new System.Drawing.Size(180, 55);
+            this.tslAbout.Text = "by MayankP";
+            this.tslAbout.Click += new System.EventHandler(this.tslAbout_Click);
             // 
             // AutoNumberUpdater
             // 
@@ -216,7 +227,6 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             this.Name = "AutoNumberUpdater";
             this.Size = new System.Drawing.Size(2051, 1319);
             this.ConnectionUpdated += new XrmToolBox.Extensibility.PluginControlBase.ConnectionUpdatedHandler(this.AutoNumberUpdater_ConnectionUpdated);
-            this.OnCloseTool += AutoNumberUpdater_OnCloseTool;
             this.Load += new System.EventHandler(this.AutoNumberUpdater_Load);
             this.toolStripMenu.ResumeLayout(false);
             this.toolStripMenu.PerformLayout();
@@ -241,5 +251,6 @@ namespace Sdmsols.XTB.AutoNumberUpdater
         private System.Windows.Forms.TextBox txtSample;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnFixAutoNumbers;
+        private System.Windows.Forms.ToolStripLabel tslAbout;
     }
 }

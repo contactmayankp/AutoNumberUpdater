@@ -21,7 +21,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
         ExportMetadata("BackgroundColor", "Lavender"),
         ExportMetadata("PrimaryFontColor", "Black"),
         ExportMetadata("SecondaryFontColor", "Gray")]
-    public class MyPlugin : PluginBase
+    public class MyPlugin : PluginBase,IPayPalPlugin
     {
         public override IXrmToolBoxPluginControl GetControl()
         {
@@ -80,5 +80,8 @@ namespace Sdmsols.XTB.AutoNumberUpdater
 
             return loadAssembly;
         }
+
+        public string DonationDescription => "Auto Number Updater";
+        public string EmailAccount => "mayank.pujara@gmail.com";
     }
 }

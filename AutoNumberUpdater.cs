@@ -21,7 +21,7 @@ using XrmToolBox.Extensibility.Interfaces;
 
 namespace Sdmsols.XTB.AutoNumberUpdater
 {
-    public partial class AutoNumberUpdater : PluginControlBase,IGitHubPlugin, IPayPalPlugin, IMessageBusHost, IHelpPlugin, IStatusBarMessenger
+    public partial class AutoNumberUpdater : PluginControlBase,IGitHubPlugin, IPayPalPlugin, IMessageBusHost, IHelpPlugin, IStatusBarMessenger, IAboutPlugin
     {
         #region Constructor and Class Variables
 
@@ -98,7 +98,6 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             {
                 LoadSolutions();
                 LoadEntities();
-
             }
             else
             {
@@ -131,34 +130,43 @@ namespace Sdmsols.XTB.AutoNumberUpdater
         private void cmbSolution_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisableControls((int)ControlSelected.Solutions);
-            FilterEntities();
+            if (cmbSolution.SelectedItem != null)
+            {
+                FilterEntities();
+            }
         }
 
         private void cmbEntities_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DisableControls((int)ControlSelected.Entities);
-            _selectedEntity = (EntityMetadataProxy)cmbEntities.SelectedItem;
 
-            LoadAttributes(false);
+            DisableControls((int)ControlSelected.Entities);
+            if (cmbEntities.SelectedItem != null)
+            {
+                _selectedEntity = (EntityMetadataProxy) cmbEntities.SelectedItem;
+
+                LoadAttributes(false);
+            }
         }
 
         private void cmbAttributes_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisableControls((int)ControlSelected.Attributes);
 
-            _selectedAttributeMetadata = (AttributeProxy)cmbAttributes.SelectedItem;
-
-
-            if (_selectedAttributeMetadata != null)
+            if (cmbAttributes.SelectedItem != null)
             {
-                var selectedFormat = _selectedAttributeMetadata.attributeMetadata.AutoNumberFormat;
-                int currentLastValue = GuessSeed();
-                int nextValue = currentLastValue + 1;
-                txtSample.Text = ParseNumberFormat(selectedFormat, nextValue.ToString());
+                _selectedAttributeMetadata = (AttributeProxy) cmbAttributes.SelectedItem;
 
-                if (!string.IsNullOrEmpty(txtSample.Text))
+                if (_selectedAttributeMetadata != null)
                 {
-                    btnFixAutoNumbers.Enabled = true;
+                    var selectedFormat = _selectedAttributeMetadata.attributeMetadata.AutoNumberFormat;
+                    int currentLastValue = GuessSeed();
+                    int nextValue = currentLastValue + 1;
+                    txtSample.Text = ParseNumberFormat(selectedFormat, nextValue.ToString());
+
+                    if (!string.IsNullOrEmpty(txtSample.Text))
+                    {
+                        btnFixAutoNumbers.Enabled = true;
+                    }
                 }
             }
 
@@ -168,8 +176,16 @@ namespace Sdmsols.XTB.AutoNumberUpdater
 
         private void btnFixAutoNumbers_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-            ExecuteMethod(GetRecordsAndFixAutoNumbers);
+                ExecuteMethod(GetRecordsAndFixAutoNumbers);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(@"an Error has occurred while processing.." + exception.Message);
+            }
+           
         }
 
         #endregion Control Events
@@ -186,7 +202,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                     var qx = new QueryExpression("solution");
                     qx.ColumnSet.AddColumns("friendlyname", "uniquename");
                     qx.AddOrder("installedon", OrderType.Ascending);
-                    qx.Criteria.AddCondition("ismanaged", ConditionOperator.Equal, false);
+                    //qx.Criteria.AddCondition("ismanaged", ConditionOperator.Equal, false);
                     qx.Criteria.AddCondition("isvisible", ConditionOperator.Equal, true);
                     var lePub = qx.AddLink("publisher", "publisherid", "publisherid");
                     lePub.EntityAlias = "P";
@@ -214,7 +230,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                 }
             });
         }
-        
+
         private void LoadEntities()
         {
             _entities = new List<EntityMetadataProxy>();
@@ -231,7 +247,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                     {
                         if (completedargs.Result is RetrieveMetadataChangesResponse)
                         {
-                            var metaresponse = ((RetrieveMetadataChangesResponse) completedargs.Result).EntityMetadata;
+                            var metaresponse = ((RetrieveMetadataChangesResponse)completedargs.Result).EntityMetadata;
                             _entities.AddRange(metaresponse
                                 .Where(e => e.IsCustomizable.Value == true && e.IsIntersect.Value != true)
                                 .Select(m => new EntityMetadataProxy(m))
@@ -242,7 +258,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                 }
             });
         }
-        
+
         private void FilterEntities()
         {
             cmbEntities.Items.Clear();
@@ -498,7 +514,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                     if (result != null)
                     {
                         //MessageBox.Show($"Found {result.Entities.Count} contacts");
-                        LogTextBoxAndProgressBar.UpdateStatusMessage(StatusText, $"Found {result.Entities.Count} contacts..");
+                        LogTextBoxAndProgressBar.UpdateStatusMessage(StatusText, $"Found {result.Entities.Count} {_selectedEntity.Metadata.LogicalName} Records.");
                     }
 
                     if (result != null)
@@ -753,11 +769,20 @@ namespace Sdmsols.XTB.AutoNumberUpdater
         public string DonationDescription => "Auto Number Updater";
         public string EmailAccount => "mayank.pujara@gmail.com";
 
-        public string HelpUrl => "https://mayankp.wordpress.com/";
+        public string HelpUrl => "https://mayankp.wordpress.com/2021/12/09/xrmtoolbox-autonumberupdater-new-tool/";
 
 
         #endregion
 
-       
+
+        public void ShowAboutDialog()
+        {
+           // throw new NotImplementedException();
+        }
+
+        private void tslAbout_Click(object sender, EventArgs e)
+        {
+            Process.Start(HelpUrl);
+        }
     }
 }
