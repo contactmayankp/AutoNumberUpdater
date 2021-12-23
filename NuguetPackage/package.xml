@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Sdmsols.XTB.AutoNumberUpdater</id>
+    <version>1.2021.0.1</version>
+    <title>Auto Number Updater for XrmToolBox</title>
+    <authors>Mayank Pujara</authors>
+    <owners>mayankp</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/contactmayankp/AutoNumberUpdater</projectUrl>
+    <iconUrl>https://github.com/contactmayankp/AutoNumberUpdater/blob/main/Icons/SDMIcon.png</iconUrl>
+    <description>Updates existing records where auto number field is missing value
+    
+Read more: https://mayankp.wordpress.com/2021/12/09/xrmtoolbox-autonumberupdater-new-tool/</description>
+    <summary>An XrmToolBox tool to Updates existing records where auto number field is missing value
+     in Microsoft Dynamics 365 and the Common Data Service (CDS)</summary>
+    <releaseNotes>#1 Autonumber seed isn't used
+    <oy2ncstyherve2iixcsqominaqet5i2elk73llks6vfnsq></oy2ncstyherve2iixcsqominaqet5i2elk73llks6vfnsq> 
+</releaseNotes>
+    <copyright>Copyright 2021 SDM Solutions Limited</copyright>
+    <tags>XrmToolBox Plugins AutoNumberUpdater</tags>
+    <dependencies>
+      <dependency id="XrmToolBox" version="1.2018.6.25" />
+    </dependencies>
+  </metadata>
+</package>
+
