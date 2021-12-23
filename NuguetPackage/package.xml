@@ -14,8 +14,7 @@
 Read more: https://mayankp.wordpress.com/2021/12/09/xrmtoolbox-autonumberupdater-new-tool/</description>
     <summary>An XrmToolBox tool to Updates existing records where auto number field is missing value
      in Microsoft Dynamics 365 and the Common Data Service (CDS)</summary>
-    <releaseNotes>#1 Autonumber seed isn't used
-    <oy2ncstyherve2iixcsqominaqet5i2elk73llks6vfnsq></oy2ncstyherve2iixcsqominaqet5i2elk73llks6vfnsq> 
+    <releaseNotes>#1 Autonumber seed isn't used    
 </releaseNotes>
     <copyright>Copyright 2021 SDM Solutions Limited</copyright>
     <tags>XrmToolBox Plugins AutoNumberUpdater</tags>
