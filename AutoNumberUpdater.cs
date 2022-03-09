@@ -421,6 +421,13 @@ namespace Sdmsols.XTB.AutoNumberUpdater
 
                                 Service.Update(updateEntity);
 
+                                //UPDATE SEED TO ENSURE NEXT NUMBER GETS UPDATED!
+                                int seedValue = nextValue + 1;
+                                OrganizationRequest customActionRequest = new OrganizationRequest("SetAutoNumberSeed");
+                                customActionRequest["EntityName"] = currentEntity.LogicalName;
+                                customActionRequest["AttributeName"] = selectedAttribute;
+                                customActionRequest["Value"] = Convert.ToInt64(nextValue + 1);
+                                Service.Execute(customActionRequest);
                             }
                             else
                             {
