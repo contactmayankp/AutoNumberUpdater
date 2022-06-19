@@ -159,8 +159,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                 if (_selectedAttributeMetadata != null)
                 {
                     var selectedFormat = _selectedAttributeMetadata.attributeMetadata.AutoNumberFormat;
-                    int currentLastValue = GuessSeed();
-                    int nextValue = currentLastValue + 1;
+                    int nextValue = GuessSeed();
                     txtSample.Text = ParseNumberFormat(selectedFormat, nextValue.ToString());
 
                     if (!string.IsNullOrEmpty(txtSample.Text))
@@ -403,8 +402,7 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                             UpdateStatusMessage($"Started Processing Id: {currentEntity.Id} and {_selectedEntity.Metadata.PrimaryNameAttribute}:{primaryName}.. ");
 
 
-                            int currentLastValue = GuessSeed();
-                            int nextValue = currentLastValue + 1;
+                            int nextValue = GuessSeed();                          
                             var nextNumber = ParseNumberFormat(selectedFormat, nextValue.ToString());
 
                             if (!string.IsNullOrEmpty(nextNumber))
@@ -422,11 +420,11 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                                 Service.Update(updateEntity);
 
                                 //UPDATE SEED TO ENSURE NEXT NUMBER GETS UPDATED!
-                                int seedValue = nextValue + 1;
+                                int seedValue = nextValue;
                                 OrganizationRequest customActionRequest = new OrganizationRequest("SetAutoNumberSeed");
                                 customActionRequest["EntityName"] = currentEntity.LogicalName;
                                 customActionRequest["AttributeName"] = selectedAttribute;
-                                customActionRequest["Value"] = Convert.ToInt64(nextValue + 1);
+                                customActionRequest["Value"] = Convert.ToInt64(nextValue);
                                 Service.Execute(customActionRequest);
                             }
                             else
@@ -589,68 +587,88 @@ namespace Sdmsols.XTB.AutoNumberUpdater
 
         private int GuessSeed()
         {
-            var selectedFormat = "";
-            
-            var selectedAttribute = _selectedAttributeMetadata.LogicalName;
-            selectedFormat = _selectedAttributeMetadata.attributeMetadata.AutoNumberFormat;
-
-                var format = selectedFormat;
-            var sample = ParseNumberFormat(format, "9999999999");
-
-            if (!format.Contains("{SEQNUM:") || !format.Contains("}"))
-            {
-                throw new FormatException("Format string must contain a {SEQNUM:n} placeholder.");
-            }
-            var seqstart = sample.IndexOf("9999999999");
-            var lenghtstr = format.Split(new string[] { "{SEQNUM:" }, StringSplitOptions.None)[1];
-            lenghtstr = lenghtstr.Split('}')[0];
-            var length = 0;
-            if (int.TryParse(lenghtstr, out length))
-            {
-                if (length < 1)
-                {
-                    throw new FormatException("Failed to parse SEQNUM length.");
-                }
-            }
+            var result = 0;
+            var lastvalue = string.Empty;
             //var entity = selectedEntity;
             var entity = _entities.Find(a => a.Metadata.LogicalName.Equals(_selectedEntity.Metadata.LogicalName));
+            var selectedAttribute = _selectedAttributeMetadata.LogicalName;
             var attributename = selectedAttribute;
-            var fetchxml = "<fetch top='1' ><entity name='" + entity.Metadata.LogicalName + "' >" +
-                "<attribute name='" + attributename + "' />" +
-                "<filter><condition attribute='" + attributename + "' operator='not-null' /></filter>" +
-                "<order attribute='" + selectedAttribute + "' descending='true' /></entity></fetch>";
-            var lastrecord = Service.RetrieveMultiple(new FetchExpression(fetchxml)).Entities.FirstOrDefault();
-            var result = 0;
-            if (lastrecord == null)
-            {
-                var seedResult = (GetAutoNumberSeedResponse)Service.Execute(new GetAutoNumberSeedRequest()
-                {
-                    EntityName = entity.Metadata.LogicalName,
-                    AttributeName = attributename
-                });
 
-                if (seedResult != null)
-                {
-                    return (int) seedResult.AutoNumberSeedValue - 1;
-                }
-                else
-                {
-                    //throw new Exception("No numbered data found for attribute " + attributename);
-                    return 0;
-                }
-            }
-            var lastvalue = lastrecord[attributename].ToString();
-            if (lastvalue.Length >= seqstart + length)
+            var autoNumberResult = (GetNextAutoNumberValueResponse)Service.Execute(new GetNextAutoNumberValueRequest()
             {
-                var lastseqstr = lastvalue.Substring(seqstart, length);
-                if (int.TryParse(lastseqstr, out int lastseq))
-                {
-                    //LogUse("GuessSeed succeeded");
-                    result = lastseq;
-                }
-            }
+                EntityName = entity.Metadata.LogicalName,
+                AttributeName = attributename
+            });
 
-            
+
+            if (autoNumberResult != null)
+            {
+                result = (int)autoNumberResult.NextAutoNumberValue;
+                lastvalue = autoNumberResult.NextAutoNumberValue.ToString();
+
+            }
+            else
+            {
+                //if Dynamics API does not return latest value then find latest value using manual approach now!
+                var selectedFormat = "";
+
+                selectedFormat = _selectedAttributeMetadata.attributeMetadata.AutoNumberFormat;
+
+                var format = selectedFormat;
+                var sample = ParseNumberFormat(format, "9999999999");
+
+                if (!format.Contains("{SEQNUM:") || !format.Contains("}"))
+                {
+                    throw new FormatException("Format string must contain a {SEQNUM:n} placeholder.");
+                }
+                var seqstart = sample.IndexOf("9999999999");
+                var lenghtstr = format.Split(new string[] { "{SEQNUM:" }, StringSplitOptions.None)[1];
+                lenghtstr = lenghtstr.Split('}')[0];
+                var length = 0;
+                if (int.TryParse(lenghtstr, out length))
+                {
+                    if (length < 1)
+                    {
+                        throw new FormatException("Failed to parse SEQNUM length.");
+                    }
+                }
+
+                var fetchxml = "<fetch top='1' ><entity name='" + entity.Metadata.LogicalName + "' >" +
+                    "<attribute name='" + attributename + "' />" +
+                    "<filter><condition attribute='" + attributename + "' operator='not-null' /></filter>" +
+                    "<order attribute='" + selectedAttribute + "' descending='true' /></entity></fetch>";
+                var lastrecord = Service.RetrieveMultiple(new FetchExpression(fetchxml)).Entities.FirstOrDefault();
+                
+                if (lastrecord == null)
+                {
+                    var seedResult = (GetAutoNumberSeedResponse)Service.Execute(new GetAutoNumberSeedRequest()
+                    {
+                        EntityName = entity.Metadata.LogicalName,
+                        AttributeName = attributename
+                    });
+
+                    if (seedResult != null)
+                    {
+                        return (int)seedResult.AutoNumberSeedValue - 1;
+                    }
+                    else
+                    {
+                        //throw new Exception("No numbered data found for attribute " + attributename);
+                        return 0;
+                    }
+                }
+                lastvalue = lastrecord[attributename].ToString();
+                if (lastvalue.Length >= seqstart + length)
+                {
+                    var lastseqstr = lastvalue.Substring(seqstart, length);
+                    if (int.TryParse(lastseqstr, out int lastseq))
+                    {
+                        //LogUse("GuessSeed succeeded");
+                        result = lastseq;
+                    }
+                }
+
+            }
 
             if (result == 0)
             {
