@@ -18,6 +18,8 @@ using Microsoft.Xrm.Sdk.Metadata;
 using XrmToolBox.Extensibility;
 using XrmToolBox.Extensibility.Args;
 using XrmToolBox.Extensibility.Interfaces;
+using Microsoft.Xrm.Sdk.Organization;
+using System.Web.Services.Description;
 
 namespace Sdmsols.XTB.AutoNumberUpdater
 {
@@ -32,6 +34,8 @@ namespace Sdmsols.XTB.AutoNumberUpdater
 
         private AttributeProxy _selectedAttributeMetadata;
 
+        private int _stateCode = -1;
+
         public event EventHandler<MessageBusEventArgs> OnOutgoingMessage;
         public event EventHandler<StatusBarMessageEventArgs> SendMessageToStatusBar;
 
@@ -40,8 +44,8 @@ namespace Sdmsols.XTB.AutoNumberUpdater
         {
             Solutions=1,
             Entities=2,
-            Attributes=3
-
+            Attributes=3,
+            StateCodes=4
         }
 
         public AutoNumberUpdater()
@@ -144,7 +148,17 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             {
                 _selectedEntity = (EntityMetadataProxy) cmbEntities.SelectedItem;
 
+                LoadStateCodes();
                 LoadAttributes(false);
+            }
+        }
+
+        private void cmbStateCodes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisableControls((int)ControlSelected.StateCodes);
+            if (cmbStateCodes.SelectedValue != null && cmbStateCodes.SelectedValue is int)
+            {
+                _stateCode = (int)cmbStateCodes.SelectedValue;
             }
         }
 
@@ -299,7 +313,57 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                 }
             });
         }
-        
+
+        private void LoadStateCodes()
+        {
+            //cmbStateCodes.Items.Clear();
+            cmbStateCodes.Enabled = false;
+            var entity = cmbEntities.SelectedItem as EntityMetadataProxy;
+
+            WorkAsync(new WorkAsyncInfo("Filtering entities...",
+            (eventargs) =>
+            {
+
+                var attributeRequest = new RetrieveAttributeRequest
+                {
+                    EntityLogicalName = entity.Metadata.LogicalName,
+                    LogicalName = "statecode",
+                    RetrieveAsIfPublished = true
+                };
+
+                var attributeResponse = (RetrieveAttributeResponse)Service.Execute(attributeRequest);
+                var attributeMetadata = (EnumAttributeMetadata)attributeResponse.AttributeMetadata;
+
+                var optionList = (from o in attributeMetadata.OptionSet.Options
+                                  select new KeyValuePair<string,int>(o.Label.UserLocalizedLabel.Label, o.Value.Value)).ToList();
+
+                optionList.Insert(0, new KeyValuePair<string, int>("Default (No StateCode Filter)", -1));
+
+                eventargs.Result = optionList;
+            })
+            {
+                PostWorkCallBack = (completedargs) =>
+                {
+                    if (completedargs.Error != null)
+                    {
+                        MessageBox.Show(completedargs.Error.Message);
+                    }
+                    else
+                    {
+                        if (completedargs.Result is List<KeyValuePair<string, int>>)
+                        {
+                            var options = (List<KeyValuePair<string, int>>)completedargs.Result;
+                            cmbStateCodes.Enabled = true;
+                            cmbStateCodes.ValueMember = "Value";
+                            cmbStateCodes.DisplayMember = "Key";
+                            cmbStateCodes.DataSource = options;
+                        }
+                    }
+
+                }
+            });
+        }
+
         private void LoadAttributes(bool force)
         {
             cmbAttributes.Items.Clear();
@@ -358,8 +422,11 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                     cmbEntities.Enabled = false;
                     cmbAttributes.Items.Clear();
                     cmbAttributes.Enabled = false;
+                    cmbStateCodes.DataSource = null;
+                    cmbStateCodes.Enabled = false;
                     txtSample.Text = "";
                     btnFixAutoNumbers.Enabled = false;
+                    _stateCode = -1;
                     break;
                 case (int)ControlSelected.Entities:
                     cmbAttributes.Items.Clear();
@@ -370,6 +437,8 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                 case (int)ControlSelected.Attributes:
                     txtSample.Text = "";
                     btnFixAutoNumbers.Enabled = false;
+                    break;
+                case (int)ControlSelected.StateCodes:
                     break;
 
 
@@ -473,9 +542,13 @@ namespace Sdmsols.XTB.AutoNumberUpdater
                     PagingCookie = null,
                     Count = 0x1388
                 },
-                Criteria = new FilterExpression()
+                Criteria = new FilterExpression(LogicalOperator.And)
             };
             query.Criteria.AddCondition(selectedAttribute, ConditionOperator.Null);
+
+            if (_stateCode != -1)
+                query.Criteria.AddCondition("statecode", ConditionOperator.Equal,_stateCode);
+
             while (true)
             {
                 var entities = this.Service.RetrieveMultiple(query);
@@ -809,5 +882,6 @@ namespace Sdmsols.XTB.AutoNumberUpdater
         {
             Process.Start(HelpUrl);
         }
+
     }
 }
