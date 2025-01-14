@@ -546,6 +546,15 @@ namespace Sdmsols.XTB.AutoNumberUpdater
             };
             query.Criteria.AddCondition(selectedAttribute, ConditionOperator.Null);
 
+            if (chkAscending.Checked)
+            {
+                query.AddOrder(attributeName: txtOrderAttribute.Text, orderType: OrderType.Ascending);
+            }
+            else
+            {
+                query.AddOrder(attributeName: txtOrderAttribute.Text, orderType: OrderType.Descending);
+            }
+
             if (_stateCode != -1)
                 query.Criteria.AddCondition("statecode", ConditionOperator.Equal,_stateCode);
 
